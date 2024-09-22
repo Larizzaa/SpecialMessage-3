@@ -13,11 +13,10 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #f0f0f0;
+            background-color: #ffe6ea; /* Light pink background */
             overflow: hidden;
             font-family: 'Arial', sans-serif;
             text-align: center;
-            background-color: #ffb3c6; /* Light pink background */
         }
 
         /* Centered message and GIF */
@@ -27,8 +26,8 @@
         }
 
         h1 {
-            font-size: 2em;
-            color: #d62828;
+            font-size: 2.5em;
+            color: #d4006e; /* Dark pink font */
             text-shadow: 2px 2px #fff;
         }
 
@@ -45,15 +44,27 @@
             position: absolute;
             width: 50px;
             height: 50px;
-            background-color: #ff4d6d;
-            clip-path: polygon(50% 0%, 100% 40%, 75% 100%, 50% 75%, 25% 100%, 0% 40%);
+            background-color: #ff4d6d; /* Red hearts */
+            clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 50% 82%, 18% 100%, 0% 38%);
             animation: float 7s infinite;
         }
 
         /* Keyframes for heart floating animation */
         @keyframes float {
             0% {
-                transform: translateY(0) scale(1);
+                transform: translateY(100vh) scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) scale(0.5);
+                opacity: 0;
+            }
+        }
+
+        /* Heart positions and animation speeds */
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) scale(1);
                 opacity: 1;
             }
             100% {
@@ -67,8 +78,8 @@
 
     <!-- Message and GIF -->
     <div class="message">
-        <h1>Heyoo [Ajeksander <3], sending you all my love! 😘</h1>
-        <img src="[img src="https://media.giphy.com/media/bGm9FuBCGg4SY/giphy.gif" alt="Kissing GIF">
+        <h1>Heyoo Ajexander, sending you all my love! 😘</h1>
+        <img src="https://media.giphy.com/media/bGm9FuBCGg4SY/giphy.gif" alt="Kissing GIF">
     </div>
 
     <!-- Hearts animation -->
@@ -81,11 +92,11 @@
             heart.classList.add('heart');
             document.body.appendChild(heart);
 
-            const size = Math.random() * 50 + 20 + 'px'; // Random size for hearts
+            const size = Math.random() * 30 + 20 + 'px'; // Random size for hearts
             heart.style.width = size;
             heart.style.height = size;
             heart.style.left = Math.random() * 100 + 'vw'; // Random horizontal position
-            heart.style.animationDuration = Math.random() * 3 + 5 + 's'; // Random animation duration
+            heart.style.animationDuration = Math.random() * 3 + 4 + 's'; // Random animation duration
 
             setTimeout(() => {
                 heart.remove();
